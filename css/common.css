@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    min-height: 500px;
+    min-width: 1500px;
+    background-image: url(../img/4029cd70-5f7a-4798-93a6-9229c55c3826.jpg);
+    background-size: 100% 500px;
+    height: 300px;
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 250px;
+    left: 250px;
+    width: 200px;;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    max-width: 210px;
+    min-width: 210px;
+    text-align: center;
+    color: rgb(0, 31, 61);
+    font-size: 22px;
+    background-color: rgb(198, 209, 219);
+    padding: 10px;
+    gap: 10px;
+}
+
+nav button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding-right: 10px;
+    font-weight:bold;
+    background-color: rgb(0, 31, 61);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+nav button:hover {
+    background-color: #3172c3;
+}
+
+nav img {
+    width: 30px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+nav div img{
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: solid 3px;
+}
+
+main {
+    flex-grow: 1;
+    background-color: rgb(204, 204, 204);
+    min-width: 475px;
+    height: 100%;
+}
+
+main p {
+    padding: 0px 20px;
+    text-align: end;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+main p a {
+    color: black;
+}
+
+main h1 {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 31, 61);
+    color: white;
+}
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50px;
+    width: 100%;
+}
+
+footer div ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer div ul li {
+    margin: 10px;
+    text-align: center;
+}
+
+footer div ul li a {
+    color: white;
+}
+
+footer div p {
+    text-align: center;
+    color: rgb(128, 177, 207);
+}
