@@ -58,16 +58,13 @@
             <div class="container">
                 <div class="formulario">
                     <h2>DATOS DE CONTACTO</h2>
-                    <form action="#" method="post" target="_blank">
-                        <label for="nombre">Nombre:
-                            <input type="text" name="nombre" id="nombre" required>
-                        </label>
-                        <label for="email">Email:
-                            <input type="email" name="email" id="email">
-                        </label>
-                        <label for="mensaje">Mensaje:
-                            <textarea name="mensaje" id="mensaje"></textarea>
-                        </label>
+                    <form action="#" method="post" target="_blank" id="myForm">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" required>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea name="mensaje" id="mensaje" required></textarea>
                     </form>
                 </div>
                 <div class="texto">
@@ -87,8 +84,8 @@
                     </div>
                 </div>
                 <div class="botones">
-                    <button><p>Limpiar</p></button>
-                    <button><p>Enviar</p></button>
+                    <button type="reset" form="myForm"><p>Limpiar</p></button>
+                    <button type="submit" form="myForm"><p>Enviar</p></button>
                 </div>
             </div>
     </main>
