@@ -5,14 +5,14 @@ main h3 {
 main button {
     align-items: center;
     font-weight:bold;
-    background-color: rgb(0, 31, 61);
+    background-color: #005bc5;
     border: none;
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
 main button:hover {
-    background-color: #3172c3;
+    background-color: rgb(254, 188, 127);
 }
 
 .seleccion_de_moneda {
@@ -26,7 +26,7 @@ main button:hover {
     gap: 25px;
 }
 
-@media (width < 1710px) {
+@media (width < 1640px) {
     .grilla{
         grid-template-columns: 1fr 1fr;
     }

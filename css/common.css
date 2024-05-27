@@ -1,58 +1,66 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+html {
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
     height: 100%;
+    display: grid;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto 1fr;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: auto;
 }
 
 header {
-    min-height: 500px;
-    min-width: 1500px;
-    background-image: url(../img/4029cd70-5f7a-4798-93a6-9229c55c3826.jpg);
-    background-size: 100% 500px;
+    grid-column: 1 / -1;
+    background-image: url("../img/conjunto-garabatos-dibujados-mano-simbolos-negocios-banner-web-finanzas-vectoriales_206606-216.jpg");
+    background-repeat: repeat;
     height: 300px;
-    position: relative;
 }
 
 header img {
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 250px;
-    left: 250px;
-    width: 200px;;
+    top: 150px;
+    left: 50%;
+    filter: invert();
+    transition-duration: 1s;
 }
 
-section {
-    display: flex;
-    flex-direction: row;
+header img:hover {
+    filter: invert() drop-shadow(0px 0px 20px white);
+}
+
+@media (width < 740px) {
+    header img {
+        width: 100%;
+    }
 }
 
 nav {
+    width: 210px;
+    background-color: #001449;
     display: flex;
     flex-direction: column;
-    width: 210px;
-    max-width: 210px;
-    min-width: 210px;
     text-align: center;
-    color: rgb(0, 31, 61);
-    font-size: 22px;
-    background-color: rgb(198, 209, 219);
-    padding: 10px;
+    color: white;
+    font-size: 20px;
+    padding: 10px 10px 0px 10px;
     gap: 10px;
+    min-height: 650px;
 }
 
 nav button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     font-size: 20px;
     letter-spacing: 2px;
-    padding-right: 10px;
+    padding: 0px 10px;
     font-weight:bold;
-    background-color: rgb(0, 31, 61);
+    background-color: #005bc5;
     color: white;
     border: none;
     border-radius: 10px;
@@ -61,53 +69,83 @@ nav button {
 }
 
 nav button:hover {
-    background-color: #3172c3;
+    background-color: rgb(254, 188, 127);
+    color: black;
 }
 
-nav img {
+nav button img {
     width: 30px;
     height: 30px;
-    padding-left: 10px;
 }
 
 nav div img{
-    max-width: 100%;
-    height: auto;
-    padding: 0;
     width: 100%;
+    border-radius: 50%;
+    border: solid 5px rgb(254, 188, 127);;
     box-sizing: border-box;
-    border-radius: 100%;
-    border: solid 3px;
+}
+
+.scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    overflow-y: auto;
+    scrollbar-width: none;
 }
 
 main {
-    flex-grow: 1;
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(128, 177, 207);
     min-width: 475px;
-    height: 100%;
 }
 
 main p {
     padding: 0px 20px;
     text-align: end;
-    font-style: italic;
     font-size: 20px;
     font-weight: bold;
 }
 
 main p a {
     color: black;
+    font-style: italic;
 }
 
 main h1 {
     text-align: center;
+    font-size: 30px;
+}
+
+@media (width < 900px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 70px 1fr auto;
+    }
+
+    nav {
+        flex-direction: row;
+        width: auto;
+        padding: 10px;
+        gap: 0;
+        min-height: 0;
+        gap: 10px;
+    }
+    
+    nav button {
+        flex: 1;
+        justify-content: center;
+    }
+
+    nav div, nav div img, nav p, .scroll {
+        display: none;
+    }
 }
 
 footer {
+    grid-column: 1 / -1;
+    background-color: rgb(42, 21, 2);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(0, 31, 61);
     color: white;
 }
 
@@ -135,5 +173,5 @@ footer div ul li a {
 
 footer div p {
     text-align: center;
-    color: rgb(128, 177, 207);
+    color: rgb(254, 188, 127);
 }
