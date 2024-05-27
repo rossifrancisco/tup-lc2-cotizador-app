@@ -2,7 +2,6 @@ main {
     min-width: 510px;
 }
 
-
 .container {
     display: flex;
     flex-direction: column;
@@ -11,7 +10,6 @@ main {
     margin: 10px;
     border-radius: 25px;
 }
-
 
 .titulos {
     display: flex;

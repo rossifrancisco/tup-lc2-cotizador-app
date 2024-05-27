@@ -19,6 +19,12 @@ main button:hover {
     text-align: center;
 }
 
+label, select {
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
 .grilla{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -58,10 +64,4 @@ main button:hover {
 .moneda {
     flex-grow: 1; 
     text-align: start;
-}
-
-label, select {
-    text-align: center;
-    font-size: 20px;
-    border-radius: 10px;
 }
