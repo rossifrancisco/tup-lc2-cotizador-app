@@ -1,67 +1,57 @@
-main {
-    min-width: 510px;
-}
-
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: rgb(42, 21, 2);
-    margin: 10px;
-    border-radius: 25px;
-}
-
-.titulos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0;
-    color: white;
-}
-
-.informacion {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    gap: 25px 5px;
-    padding: 0;
     text-align: center;
-    letter-spacing: 2px;
     font-size: 20px;
     overflow-y: auto;
-    max-height: 450px;
+    max-height: 480px;
     scrollbar-width: none;
-    background-color: rgb(254, 188, 127);
-    border-radius: 25px;
+    min-width: min-content;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    scroll-snap-type: y mandatory;
 }
 
-.informacion div {
-    min-width: max-content;
+.cabecera {
+    display: grid;
+    background-color: violet;
+    grid-template-columns: repeat(6, 1fr);
+    position: sticky;
+    top: 0;
 }
 
-@media (width < 600px){
-    .informacion {
-        grid-template-columns: 1fr 1fr 1fr 1fr auto;
-    }
-
-    .titulos h2:last-child {
-        display: none;
-    }
+.datos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    scroll-margin-top: 58px;
+    scroll-snap-align: start;
 }
 
-.informacion ul {
+.cabecera ul, .datos ul{
+    display: contents;
+}
+
+.fecha {
+    grid-row: span 500;
+}
+
+main ul {
     list-style: none;
-    padding: 0;
     margin: 0;
 }
 
-.informacion ul li img {
-    padding: 0px 5px;
-    width: 15px;
-    height: auto;
-    transition-duration: 0.25s;
+main ul li {
+    padding: 5px;
 }
 
-.informacion ul li img:hover{
+.container div:nth-child(2n) {
+    background-color: lightgrey;
+}
+
+.container ul li i {
+    transition-duration: 0.5s;
+}
+
+.container ul li i:hover{
     filter: invert()
 }

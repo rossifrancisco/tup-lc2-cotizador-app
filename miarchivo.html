@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizacion de Monedas</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/miarchivo.css">
+    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous"></script>
+    <script src="js/pages/miarchivo.js"></script>
 </head>
+
 <body>
     <header>
-        <img src="img/cotizacion_header_1-removebg-preview.png" alt="logo" onclick="window.location.href='#abajo'">
+        <img src="img/cotizacion_header_1-removebg-preview.png" alt="logo" onclick="window.location.href='index.html'">
     </header>
-        
+
     <nav>
         <button onclick="window.location.href='index.html'">
-            <img src=" img\17-178841_home-png-home-icon-free.png" alt="Inicio">
-            <p>Inicio</p>
+            <i class="fa-solid fa-house"></i>
+            <h3>Inicio</h3>
         </button>
-    
-        <button style="background-color: rgb(254, 188, 127); color: black" onclick="window.location.href='miarchivo.html'">
-            <img src="img\166122.png" alt="Archivo">
-            <p>Mi Archivo</p>
+
+        <button style="background-color: orange; color: black" onclick="window.location.href='miarchivo.html'">
+            <i class="fa-solid fa-box-archive"></i>
+            <h3>Mi Archivo</h3>
         </button>
-    
+
         <button onclick="window.location.href='informes.html'">
-            <img src="img\3c27c60999f119f97ded3d5bc1904512-informe-silueta.webp" alt="Informe">
-            <p>Informes</p>
+            <i class="fa-solid fa-chart-simple"></i>
+            <h3>Informes</h3>
         </button>
-    
+
         <button onclick="window.location.href='contacto.html'">
-            <img src="img\contact-icon-png-1.jpg" alt="Contacto">
-            <p>Contáctenos</p>
+            <i class="fa-solid fa-address-book"></i>
+            <h3>Contáctenos</h3>
         </button>
-        
-        <div>
-            <p>¡Miles de usuarios nos recomiendan!</p>
-        </div>
-        
+
+        <p>¡Miles de usuarios nos recomiendan!</p>
+
         <div class="scroll">
             <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
             <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
@@ -52,228 +54,77 @@
     </nav>
 
     <main>
-        <a name="abajo" id="abajo"></a>   
-        <p>Usted está aquí: <a href="miarchivo.html">Mi Archivo</a></p>
-        <h1>Mi Archivo</h1>
+        <p class="dondeEstoy">Usted está aquí: <a href="miarchivo.html">Mi Archivo</a></p>
+        <h1 class="titulo">Mi Archivo</h1>
         <div class="container">
-            <div class="titulos">
-                <h2>Fecha</h2>
-                <h2>Moneda</h2>
-                <h2>Compra</h2>
-                <h2>Venta</h2>
-                <h2>Accion</h2>
+            <div class="cabecera">
+                <ul>
+                    <li><h2>Fecha</h2></li>
+                    <li><h2>Hora</h2></li>
+                    <li><h2>Moneda</h2></li>
+                    <li><h2>Compra</h2></li>
+                    <li><h2>Venta</h2></li>
+                    <li><h2>Accion</h2></li>
+                </ul>
             </div>
-            <div class="informacion">
-                <div>15/04/2024</div>
-                <div>
-                    <ul>
-                        <li>Dolar Blue</li>
-                        <li>Dolar MEP</li>
-                        <li>Dolar Tarjeta</li>
-                        <li>Dolar Cripto</li>
-                        <li>Euro</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                    </ul>
-                </div>
-                <div>15/04/2024</div>
-                <div>
-                    <ul>
-                        <li>Dolar Blue</li>
-                        <li>Dolar MEP</li>
-                        <li>Dolar Tarjeta</li>
-                        <li>Dolar Cripto</li>
-                        <li>Euro</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                    </ul>
-                </div>
-                <div>15/04/2024</div>
-                <div>
-                    <ul>
-                        <li>Dolar Blue</li>
-                        <li>Dolar MEP</li>
-                        <li>Dolar Tarjeta</li>
-                        <li>Dolar Cripto</li>
-                        <li>Euro</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                    </ul>
-                </div>
-                <div>15/04/2024</div>
-                <div>
-                    <ul>
-                        <li>Dolar Blue</li>
-                        <li>Dolar MEP</li>
-                        <li>Dolar Tarjeta</li>
-                        <li>Dolar Cripto</li>
-                        <li>Euro</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                    </ul>
-                </div>
-                <div>15/04/2024</div>
-                <div>
-                    <ul>
-                        <li>Dolar Blue</li>
-                        <li>Dolar MEP</li>
-                        <li>Dolar Tarjeta</li>
-                        <li>Dolar Cripto</li>
-                        <li>Euro</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                        <li><img src="img/coins (1).png" alt=""></li>
-                    </ul>
-                </div>
-            </div>   
+            <!--
+            <div class="datos">
+                <ul>
+                    <li class="fecha">15/12/2023</li>
+                </ul>
+                <ul>
+                    <li>08:30:25</li>
+                    <li>Blue</li>
+                    <li>1111.11</li>
+                    <li>1111.1</li>
+                    <li><i class="fa-solid fa-trash-can"></i></li>
+                </ul>
+                <ul>
+                    <li>08:30:25</li>
+                    <li>Blue</li>
+                    <li>1111.11</li>
+                    <li>1111.1</li>
+                    <li><i class="fa-solid fa-trash-can"></i></li>
+                </ul>
+                <ul>
+                    <li>08:30:25</li>
+                    <li>Blue</li>
+                    <li>1111.11</li>
+                    <li>1111.1</li>
+                    <li><i class="fa-solid fa-trash-can"></i></li>
+                </ul>
+            </div>
+            -->
         </div>
     </main>
 
     <footer>
         <div>
             <ul>
-                <li><h3>Informacion de Contacto</h3></li>
+                <li>
+                    <h3>Informacion de Contacto</h3>
+                </li>
                 <li><a href="contacto.html">>Quienes Somos</a></li>
                 <li><a href="contacto.html">>Socios Estrategicos</a></li>
                 <li><a href="contacto.html">>Trabaje con Nosotros</a></li>
                 <li><a href="contacto.html">>Ayuda</a></li>
             </ul>
             <ul>
-                <li><h3>Accesos Directos</h3></li>
+                <li>
+                    <h3>Accesos Directos</h3>
+                </li>
                 <li><a href="index.html">>Inicio</a></li>
                 <li><a href="miarchivo.html">>Mi Archivo</a></li>
                 <li><a href="informes.html">>Informes</a></li>
                 <li><a href="contacto.html">>Contactenos</a></li>
             </ul>
             <ul>
-                <li><h3>Informacion Institucional</h3></li>
+                <li>
+                    <h3>Informacion Institucional</h3>
+                </li>
                 <li>Universidad Tecnologica Nacional</li>
                 <li>Direccion: Zeballos 1341, Rosario</li>
-                <li>Telefono: 0341-4481871</li>    
+                <li>Telefono: 0341-4481871</li>
                 <li><a href="contacto.html">>Escribanos!!!</a></li>
             </ul>
         </div>
@@ -285,4 +136,5 @@
         </div>
     </footer>
 </body>
+
 </html>

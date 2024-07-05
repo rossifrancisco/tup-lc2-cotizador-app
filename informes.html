@@ -6,36 +6,54 @@
     <title>Cotizacion de Monedas</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/informes.css">
+    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous"></script>
+    <script src="js/common.js"></script>
+    <script src="js/pages/informes.js"></script>
 </head>
 <body>
+    <div class="modal">
+        <div class="modal-content">
+            <h2>Ingrese los datos del destinatario</h2>
+            <label for="modalCheckbox" class="close">&times;</label>
+            <form action="#" method="post" target="_blank">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+                <div class="botones">
+                    <button type="reset"><p>Limpiar</p></button>
+                    <button type="submit"><p>Enviar</p></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <header>
-        <img src="img/cotizacion_header_1-removebg-preview.png" alt="logo" onclick="window.location.href='#abajo'">
+        <img src="img/cotizacion_header_1-removebg-preview.png" alt="logo" onclick="window.location.href='index.html'">
     </header>
         
     <nav>
         <button onclick="window.location.href='index.html'">
-            <img src=" img\17-178841_home-png-home-icon-free.png" alt="Inicio">
-            <p>Inicio</p>
+            <i class="fa-solid fa-house"></i>
+            <h3>Inicio</h3>
         </button>
     
         <button onclick="window.location.href='miarchivo.html'">
-            <img src="img\166122.png" alt="Archivo">
-            <p>Mi Archivo</p>
+            <i class="fa-solid fa-box-archive"></i>
+            <h3>Mi Archivo</h3>
         </button>
     
-        <button style="background-color: rgb(254, 188, 127); color: black" onclick="window.location.href='informes.html'">
-            <img src="img\3c27c60999f119f97ded3d5bc1904512-informe-silueta.webp" alt="Informe">
-            <p>Informes</p>
+        <button style="background-color: orange; color: black" onclick="window.location.href='informes.html'">
+            <i class="fa-solid fa-chart-simple"></i>
+            <h3>Informes</h3>
         </button>
     
         <button onclick="window.location.href='contacto.html'">
-            <img src="img\contact-icon-png-1.jpg" alt="Contacto">
-            <p>Contáctenos</p>
+            <i class="fa-solid fa-address-book"></i>
+            <h3>Contáctenos</h3>
         </button>
         
-        <div>
-            <p>¡Miles de usuarios nos recomiendan!</p>
-        </div>
+        <p>¡Miles de usuarios nos recomiendan!</p>
         
         <div class="scroll">
             <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
@@ -52,210 +70,159 @@
     </nav>
 
     <main>
-        <a name="abajo" id="abajo"></a>   
-        <p>Usted está aquí: <a href="informes.html">Informes</a></p>
-        <h1>Pizarra de Informes</h1>
+        <p class="dondeEstoy">Usted está aquí: <a href="informes.html">Informes</a></p>
+        <h1 class="titulo">Pizarra de Informes</h1>
         <div>
-            <iframe src='https://flo.uri.sh/visualisation/18122684/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;text-align:right!important;'></div>
+            <!--grafica-->
         </div>
         <div>
             <button><p>COMPARTIR</p></button>
         </div>
         <div class="container">
-            <div class="titulos">
-                <h2>Moneda</h2>
-                <h2>Fechas</h2>
-                <h2>Compra</h2>
-                <h2>Venta</h2>
-                <h2>Variacion</h2>
+            <div class="cabecera">
+                <ul>
+                    <li><h2>Moneda</h2></li>
+                    <li><h2>fecha</h2></li>
+                    <li><h2>hora</h2></li>
+                    <li><h2>Compra</h2></li>
+                    <li><h2>Venta</h2></li>
+                    <li><h2>Variacion</h2></li>
+                </ul>
             </div>
-            <div class="informacion">
-                <div>Dolar Blue</div>
-                <div>
-                    <ul>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                    </ul>
-                </div>
-                <div>Dolar MEP</div>
-                <div>
-                    <ul>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                    </ul>
-                </div>
-                <div>Dolar Tarjeta</div>
-                <div>
-                    <ul>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                    </ul>
-                </div>
-                <div>Dolar Cripto</div>
-                <div>
-                    <ul>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                    </ul>
-                </div>
-                <div>Euro</div>
-                <div>
-                    <ul>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                        <li>15/04/2024</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                        <li>$1111.1</li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                        <li><img src="img/redArrowDown.png" alt=""></li>
-                        <li><img src="img/greenArrowUP.png" alt=""></li>
-                    </ul>
-                </div>
-            </div>   
+            <!-- 
+            <div class="datos">
+                <ul>
+                    <li class="moneda">blue</li>
+                </ul>
+                <ul>
+                    <li>15/12/2023</li>
+                    <li>08:30:25</li>
+                    <li>1111.11</li>
+                    <li>1111.1</li>
+                    <li><i class="fa-solid fa-circle-arrow-xmark"></i></li>
+                </ul>
+                <ul>
+                    <li>15/12/2023</li>
+                    <li>08:30:25</li>
+                    <li>1111.11</li>
+                    <li>1111.1</li>
+                    <li><i class="fa-solid fa-circle-minus"></i></li>
+                </ul>
+                <ul>
+                    <li>15/12/2023</li>
+                    <li>08:30:25</li>
+                    <li>1111.11</li>
+                    <li>1111.1</li>
+                    <li><i class="fa-solid fa-circle-arrow-down"></i></li>
+                </ul>
+                <ul>
+                    <li>15/12/2023</li>
+                    <li>08:30:25</li>
+                    <li>1111.11</li>
+                    <li>1111.1</li>
+                    <li><i class="fa-solid fa-circle-arrow-up"></i></li>
+                </ul> 
+                -->
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--<div class="cabecera">
+            <h2>Moneda</h2>
+            <h2>Fecha</h2>
+            <h2>Hora</h2>
+            <h2>Compra</h2>
+            <h2>Venta</h2>
+            <h2>Accion</h2>
+        </div>
+        <div class="container">
+             ejemplo de lo que hace el .js
+            <div class="info">
+                <ul>
+                    <li>Dolar Blue</li>
+                </ul>
+                <ul>
+                    <li>15/04/2024</li>
+                    <li>15/04/2024</li>
+                    <li>15/04/2024</li>
+                    <li>15/04/2024</li>
+                    <li>15/04/2024</li>
+                </ul>
+                <ul>
+                    <li>16:50:15</li>
+                    <li>16:50:15</li>
+                    <li>16:50:15</li>
+                    <li>16:50:15</li>
+                    <li>16:50:15</li>
+                </ul>
+                <ul>
+                    <li>$1111.1</li>
+                    <li>$1111.1</li>
+                    <li>$1111.1</li>
+                    <li>$1111.1</li>
+                    <li>$1111.1</li>
+                </ul>
+                <ul>
+                    <li>$1111.1</li>
+                    <li>$1111.1</li>
+                    <li>$1111.1</li>
+                    <li>$1111.1</li>
+                    <li>$1111.1</li>
+                </ul>
+                <ul>
+                    <li><i class="fa-solid fa-circle-arrow-up"></i></li>
+                    <li><i class="fa-solid fa-circle-arrow-down"></i></li>
+                    <li><i class="fa-solid fa-circle-arrow-minus"></i></li>
+                    <li><i class="fa-solid fa-circle-arrow-xmark"></i></li>
+                    <li><i class="fa-solid fa-circle-arrow-up"></i></li>
+                </ul>
+            </div>
+            -->
         </div>
     </main>
 

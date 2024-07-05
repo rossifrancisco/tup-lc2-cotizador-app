@@ -6,36 +6,37 @@
     <title>Cotizacion de Monedas</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/index.css">
+    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous"></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/pages/index.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="img/cotizacion_header_1-removebg-preview.png" alt="logo" onclick="window.location.href='#abajo'">
+        <img src="img/cotizacion_header_1-removebg-preview.png" alt="logo" onclick="window.location.href='index.html'">
     </header>
         
     <nav>
-        <button style="background-color: rgb(254, 188, 127); color: black" onclick="window.location.href='index.html'">
-            <img src=" img\17-178841_home-png-home-icon-free.png" alt="Inicio">
-            <p>Inicio</p>
+        <button style="background-color: orange; color: black" onclick="window.location.href='index.html'">
+            <i class="fa-solid fa-house"></i>
+            <h3>Inicio</h3>
         </button>
     
         <button onclick="window.location.href='miarchivo.html'">
-            <img src="img\166122.png" alt="Archivo">
-            <p>Mi Archivo</p>
+            <i class="fa-solid fa-box-archive"></i>
+            <h3>Mi Archivo</h3>
         </button>
     
         <button onclick="window.location.href='informes.html'">
-            <img src="img\3c27c60999f119f97ded3d5bc1904512-informe-silueta.webp" alt="Informe">
-            <p>Informes</p>
+            <i class="fa-solid fa-chart-simple"></i>
+            <h3>Informes</h3>
         </button>
     
         <button onclick="window.location.href='contacto.html'">
-            <img src="img\contact-icon-png-1.jpg" alt="Contacto">
-            <p>Contáctenos</p>
+            <i class="fa-solid fa-address-book"></i>
+            <h3>Contáctenos</h3>
         </button>
         
-        <div>
-            <p>¡Miles de usuarios nos recomiendan!</p>
-        </div>
+        <p>¡Miles de usuarios nos recomiendan!</p>
         
         <div class="scroll">
             <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
@@ -51,142 +52,42 @@
         </div>
     </nav>
 
-    <main>
-        <a name="abajo" id="abajo"></a>   
-        <p>Usted está aquí: <a href="index.html">Inicio</a></p>
-        <h1>Pizarra de Cotizaciones</h1>
+    <main>   
+        <p class="dondeEstoy">Usted está aquí: <a href="index.html">Inicio</a></p>
+        <h1 class="titulo">Pizarra de Cotizaciones</h1>
         <div class="seleccion_de_moneda">
             <label for="cotizaciones">Seleccione una Moneda:</label>
             <select name="cotizaciones" id="cotizaciones">
-                <option value="Todas">Todas</option>
-                <option value="dolar_oficial">Dólar Oficial</option>
-                <option value="dolar_blue">Dólar Blue</option>
-                <option value="dolar_mep">Dólar Bolsa (MEP)</option>
-                <option value="dolar_ccl">Dólar Contado con Liqui (CCL)</option>
-                <option value="dolar_tarjeta">Dólar Tarjeta</option>
-                <option value="dolar_mayorista">Dólar Mayorista</option>
-                <option value="dolar_cripto">Dólar Cripto</option>
+                <option value="todas">Todas</option>
+                <option value="favoritas">Favoritas</option>
+                <option value="oficial">Dolar Oficial</option>
+                <option value="blue">Dolar Blue</option>
+                <option value="bolsa">Dolar Bolsa (MEP)</option>
+                <option value="contado con liquidación">Dolar Contado con Liqui (CCL)</option>
+                <option value="mayorista">Dolar Mayorista</option>
+                <option value="cripto">Dolar Cripto</option>
+                <option value="tarjeta">Dolar Tarjeta</option>
                 <option value="euro">Euro</option>
-                <option value="real_brasileno">Real Brasileño</option>
-                <option value="peso_chileno">Peso Chileno</option>
-                <option value="peso_uruguayo">Peso Uruguayo</option>
+                <option value="real brasileño">Real Brasileño</option>
+                <option value="peso chileno">Peso Chileno</option>
+                <option value="peso uruguayo">Peso Uruguayo</option>
             </select>
         </div>
-        <h3>Datos actualizados al 30/05/2024 15.30 hs.</h3>
-        <h3>!Haga click en la estrella para guardar los datos de su cotización favorita!</h3>
+        <h3 id="datosActualizados"></h3>
+        <p>Haga click en la estrella para guardar los datos de su cotización favorita</p>
         <div class="grilla">
+            <!-- ejemplo de lo que hace el .js
             <div class="valores">
                 <p class="moneda">Oficial</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
+                <p>Compra<br>
+                $1111.1</p>
+                <p>Venta<br>
+                $1111.1</p>
+                <button><i class="fa-solid fa-star"></i></button>
             </div>
-            <div class="valores">
-                <p class="moneda">Blue</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">Bolsa (MEP)</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">Contado con liqui (CCL)</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">Tarjeta</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">Mayorista</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">Cripto</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">Euro</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">Real Brasileño</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">peso Chileno</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
-            <div class="valores">
-                <p class="moneda">peso Uruguayo</p>
-                <div>
-                    <p>Compra<br>
-                    $1111.1</p>
-                    <p>Venta<br>
-                    $1111.1</p>
-                    <button><img src="img\19937-blue-star-design.png" alt="Agregar a favoritos"></button>
-                </div>
-            </div>
+            -->
         </div>
-        <p>Datos obtenidos de <a href="https://dolarapi.com" target="_blank">Dolar.API</a></p>
+        <p class="dondeDatos">Datos obtenidos de <a href="https://dolarapi.com" target="_blank">Dolar.API</a></p>
     </main>
 
     <footer>

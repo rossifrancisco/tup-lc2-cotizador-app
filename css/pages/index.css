@@ -1,67 +1,78 @@
-main h3 {
-    padding-left: 20px;
-}
-
-main button {
-    align-items: center;
-    font-weight:bold;
-    background-color: #005bc5;
-    border: none;
-    cursor: pointer;
-    transition-duration: 0.5s;
-}
-
-main button:hover {
-    background-color: rgb(254, 188, 127);
-}
-
-.seleccion_de_moneda {
-    text-align: center;
-}
-
-label, select {
-    text-align: center;
+.grilla p {
     font-size: 20px;
-    border-radius: 10px;
 }
 
-.grilla{
+.seleccion_de_moneda, .seleccion_de_moneda select{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.grilla {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 20px;
-    gap: 25px;
+    grid-template-rows: auto;
+    gap: 10px;
 }
 
-@media (width < 1640px) {
-    .grilla{
-        grid-template-columns: 1fr 1fr;
-    }
+.grilla button {
+    border: none;
+    cursor: pointer;
+    min-width: 66px;
+    min-height: 66px;
+    background-color: orange;
+    transition-duration: 0.5s;
+    border-radius: 50%;
 }
 
-@media (width < 1180px) {
-    .grilla{
-        grid-template-columns: 1fr;
-    }
+.grilla button i {
+    font-size: 24px;
+    color: black;
 }
 
-.grilla img{
-    width: 25px;
-    height: 25px;
+.grilla button:hover i {
+    font-size: 32px;
+}
+
+.grilla .favorito {
+    background-color: rebeccapurple;
+}
+
+.grilla .favorito i {
+    color: white;
 }
 
 .valores {
     display: flex;
     flex-direction: row;
-    border: solid 5px;
-    transition-duration: 0.5s;
+    gap: 25px;
+    padding: 10px;
+    background-color: orange;
+    border-radius: 10px;
+    align-items: center;
 }
 
-.valores div{
+.valores.show {
     display: flex;
-    flex-direction: row;
+}
+
+.valores.hide {
+    display: none;
 }
 
 .moneda {
-    flex-grow: 1; 
-    text-align: start;
+    margin-right: auto;
 }
+
+@media (width < 1745px) {
+    .grilla{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (width < 1250px) {
+    .grilla{
+        grid-template-columns: 1fr;
+    }
+}
+

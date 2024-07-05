@@ -6,36 +6,35 @@
     <title>Cotizacion de Monedas</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/contacto.css">
+    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <img src="img/cotizacion_header_1-removebg-preview.png" alt="logo" onclick="window.location.href='#abajo'">
+        <img src="img/cotizacion_header_1-removebg-preview.png" alt="logo" onclick="window.location.href='index.html'">
     </header>
         
     <nav>
         <button onclick="window.location.href='index.html'">
-            <img src=" img\17-178841_home-png-home-icon-free.png" alt="Inicio">
-            <p>Inicio</p>
+            <i class="fa-solid fa-house"></i>
+            <h3>Inicio</h3>
         </button>
     
         <button onclick="window.location.href='miarchivo.html'">
-            <img src="img\166122.png" alt="Archivo">
-            <p>Mi Archivo</p>
+            <i class="fa-solid fa-box-archive"></i>
+            <h3>Mi Archivo</h3>
         </button>
     
         <button onclick="window.location.href='informes.html'">
-            <img src="img\3c27c60999f119f97ded3d5bc1904512-informe-silueta.webp" alt="Informe">
-            <p>Informes</p>
+            <i class="fa-solid fa-chart-simple"></i>
+            <h3>Informes</h3>
         </button>
     
-        <button style="background-color: rgb(254, 188, 127); color: black" onclick="window.location.href='contacto.html'">
-            <img src="img\contact-icon-png-1.jpg" alt="Contacto">
-            <p>Contáctenos</p>
+        <button style="background-color: orange; color: black" onclick="window.location.href='contacto.html'">
+            <i class="fa-solid fa-address-book"></i>
+            <h3>Contáctenos</h3>
         </button>
         
-        <div>
-            <p>¡Miles de usuarios nos recomiendan!</p>
-        </div>
+        <p>¡Miles de usuarios nos recomiendan!</p>
         
         <div class="scroll">
             <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
@@ -52,42 +51,42 @@
     </nav>
 
     <main>
-        <a name="abajo" id="abajo"></a>   
-            <p>Usted está aquí: <a href="contacto.html">Contacto</a></p>
-            <h1>Pongase en Contacto</h1>
-            <div class="container">
-                <div class="formulario">
-                    <h2>DATOS DE CONTACTO</h2>
-                    <form action="#" method="post" target="_blank" id="myForm">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="nombre" required>
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email" required>
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea name="mensaje" id="mensaje" required></textarea>
-                    </form>
-                </div>
-                <div class="texto">
-                    <p>Si tiene alguna sugerencia o inconveniente por favor complete el siguiente formulario y envienoslo. Lo contactaremos a la brevedad.</p>
-                    <br>
-                    <p>Esta web esta desarrolada utilizando <a href="https://dolarapi.com" target="_blank">Dolar.API</a></p>
-                </div>
-                <div class="datos">
-                    <div>
-                        <h2>DATOS DE CONTACTO</h2>
-                        <h4>ZEBALLOS 1341 - S2000BQA</h4>
-                        <h4>ROSARIO</h4>
-                        <h4>0341 - 4481871</h4>
+        <p class="dondeEstoy">Usted está aquí: <a href="contacto.html">Contacto</a></p>
+        <h1 class="titulo">Pongase en Contacto</h1>
+        <div class="container">
+            <div class="formulario">
+                <h2>Contactenos</h2>
+                <form action="#" method="post" target="_blank">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" required>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="mensaje" id="mensaje" required></textarea>
+                    <div class="botones">
+                        <button type="reset"><p>Limpiar</p></button>
+                        <button type="submit"><p>Enviar</p></button>
                     </div>
-                    <div>
-                        <img src="img/th.png" alt="logoUTN">
-                    </div>
+                </form>
+            </div>
+            <div class="texto">
+                <p>Si tiene alguna sugerencia o inconveniente por favor complete el formulario y envienoslo. Lo contactaremos a la brevedad.</p>
+                <br>
+                <p>Esta web esta desarrolada utilizando <a href="https://dolarapi.com" target="_blank">Dolar.API</a></p>
+            </div>
+            <div class="datos">
+                <div>
+                    <h3>DATOS DE CONTACTO</h3>
+                    <h4>ZEBALLOS 1341 - S2000BQA</h4>
+                    <h4>ROSARIO</h4>
+                    <h4>0341 - 4481871</h4>
                 </div>
-                <div class="botones">
-                    <button type="reset" form="myForm"><p>Limpiar</p></button>
-                    <button type="submit" form="myForm"><p>Enviar</p></button>
+                <div>
+                    <img src="img/th.png" alt="logoUTN">
                 </div>
             </div>
+            
+        </div>
     </main>
 
     <footer>
