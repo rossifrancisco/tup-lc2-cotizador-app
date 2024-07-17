@@ -1,3 +1,9 @@
+.seleccion_de_moneda, .seleccion_de_moneda select{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .modal {
     display: none;
 
@@ -158,4 +164,11 @@ main ul li {
 
 .fa-circle-xmark {
     color: black;
+}
+
+.miGrafica {
+    background-color: lightgrey;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100% !important;
 }

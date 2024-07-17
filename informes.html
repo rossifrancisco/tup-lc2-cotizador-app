@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous"></script>
     <script src="js/common.js"></script>
     <script src="js/pages/informes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
 </head>
 <body>
     <div class="modal">
@@ -72,12 +73,31 @@
     <main>
         <p class="dondeEstoy">Usted está aquí: <a href="informes.html">Informes</a></p>
         <h1 class="titulo">Pizarra de Informes</h1>
-        <div>
-            <!--grafica-->
+
+        <div class="seleccion_de_moneda">
+            <label for="cotizaciones">Seleccione una Moneda:</label>
+            <select name="cotizaciones" id="cotizaciones">
+                <option value="Todas">Todas</option>
+                <option value="Oficial">Oficial</option>
+                <option value="Blue">Blue</option>
+                <option value="Bolsa">Bolsa</option>
+                <option value="Contado con liquidación">Contado con liquidación</option>
+                <option value="Mayorista">Mayorista</option>
+                <option value="Cripto">Cripto</option>
+                <option value="Tarjeta">Tarjeta</option>
+                <option value="Euro">Euro</option>
+                <option value="Real Brasileño">Real brasileño</option>
+                <option value="Peso Chileno">Peso chileno</option>
+                <option value="Peso Uruguayo">Peso uruguayo</option>
+            </select>
         </div>
+
+        <canvas id="miGrafica" class="miGrafica"></canvas>
+
         <div>
             <button><p>COMPARTIR</p></button>
         </div>
+
         <div class="container">
             <div class="cabecera">
                 <ul>

@@ -165,12 +165,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const filtro = this.value;
 
         valores.forEach((valor) => {
-            const moneda = valor.querySelector(".moneda").textContent.toLowerCase();
-
-            if (filtro === "todas") {
+            const moneda = valor.querySelector(".moneda").textContent;
+            if (filtro === "Todas") {
                 valor.classList.add("show");
                 valor.classList.remove("hide");
-            } else if (filtro === "favoritas") {
+            } else if (filtro === "Favoritas") {
                 if (valor.querySelector("button").classList.contains("favorito")) {
                     valor.classList.add("show");
                     valor.classList.remove("hide");
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     valor.classList.remove("show");
                 }
             } else {
-                if (moneda === filtro.toLowerCase()) {
+                if (moneda === filtro) {
                     valor.classList.add("show");
                     valor.classList.remove("hide");
                 } else {

@@ -1,3 +1,5 @@
+let chartInstance = null;
+
 document.addEventListener("DOMContentLoaded", function() {
     const miArchivo = JSON.parse(localStorage.getItem('miArchivo')) || [];
     const container = document.querySelector(".container");
@@ -82,4 +84,97 @@ document.addEventListener("DOMContentLoaded", function() {
     closeModal.addEventListener("click", function() {
         modal.classList.remove("show");
     })
+
+    mostrarGrafica("Todas");
+
+    const cotizacionesSelect = document.getElementById("cotizaciones");
+
+    // Mostrar y ocultar segun el selector
+    cotizacionesSelect.addEventListener("change", function() {
+        const filtro = this.value;
+        mostrarGrafica(filtro);
+    })
+
+
+    function mostrarGrafica(filtro) {
+        // Datos para el gráfico
+        const etiquetas = [];
+        const datasets = [];
+        const colores = ["black", "red", "orange", "yellow", "green", "lime", "blue", "cyan", "purple", "violet", "pink"]; // Colores para las líneas
+    
+        let fechasAgrupadas = {};
+    
+        // Agrupar las monedas por fecha
+        miArchivo.forEach((archivo) => {
+            if (!fechasAgrupadas[archivo.fecha]) {
+                fechasAgrupadas[archivo.fecha] = [];
+            }
+            fechasAgrupadas[archivo.fecha].push(archivo);
+        });
+    
+        // Crear etiquetas a partir de las fechas
+        Object.keys(fechasAgrupadas).forEach((fecha) => {
+            if (!etiquetas.includes(fecha)) {
+                etiquetas.push(fecha);
+            }
+        });
+    
+        // Filtrar monedas según el filtro seleccionado
+        const monedasFiltradas = filtro === "Todas" ? Object.keys(monedasAgrupadas) : [filtro];
+    
+        // Crear un conjunto de datos por cada moneda filtrada
+        monedasFiltradas.forEach((moneda, index) => {
+            const preciosCompra = [];
+            const preciosVenta = [];
+        
+            // Inicializar precios con null para todas las etiquetas
+            etiquetas.forEach(etiqueta => {
+                preciosCompra.push(null); // Inicialmente, todos los valores son null
+                if (filtro !== "Todas") {
+                    preciosVenta.push(null);
+                }
+            });
+    
+            // Llenar precios con los valores correspondientes
+            monedasAgrupadas[moneda].forEach(archivo => {
+                const indexEtiqueta = etiquetas.indexOf(archivo.fecha);
+                if (indexEtiqueta !== -1) {
+                    preciosCompra[indexEtiqueta] = parseFloat(archivo.compra.replace("$", ""));
+                    if (filtro !== "Todas") {
+                        preciosVenta[indexEtiqueta] = parseFloat(archivo.venta.replace("$", ""));
+                    }
+                }
+            });
+        
+            // Agregar el dataset al arreglo datasets
+            datasets.push({
+                label: moneda + " Compra",
+                data: preciosCompra,
+                borderColor: colores[index],
+                fill: false
+            });
+            if (filtro !== "Todas") {
+                datasets.push({
+                    label: moneda + " Venta",
+                    data: preciosVenta,
+                    borderColor: colores[(index + 1)],
+                    fill: false
+                });
+            }
+        });
+    
+        const ctx = document.getElementById("miGrafica").getContext("2d");
+    
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+    
+        chartInstance = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: etiquetas,
+                datasets: datasets
+            },
+        });
+    }    
 });
