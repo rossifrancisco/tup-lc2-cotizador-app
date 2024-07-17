@@ -6,21 +6,24 @@
     <title>Cotizacion de Monedas</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/informes.css">
-    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous"></script>
-    <script src="js/common.js"></script>
-    <script src="js/pages/informes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/pages/informes.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('grIdpB2B3aaZ5c3Ky')</script>
 </head>
 <body>
     <div class="modal">
         <div class="modal-content">
             <h2>Ingrese los datos del destinatario</h2>
             <label for="modalCheckbox" class="close">&times;</label>
-            <form action="#" method="post" target="_blank">
+            <form id="form">
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre" required>
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" required>
+                <input type="hidden" name="datos" id="datos">
                 <div class="botones">
                     <button type="reset"><p>Limpiar</p></button>
                     <button type="submit"><p>Enviar</p></button>
@@ -94,11 +97,9 @@
 
         <canvas id="miGrafica" class="miGrafica"></canvas>
 
-        <div>
-            <button><p>COMPARTIR</p></button>
-        </div>
+        <button><p>COMPARTIR</p></button>
 
-        <div class="container">
+        <div class="container" id="container">
             <div class="cabecera">
                 <ul>
                     <li><h2>Moneda</h2></li>
@@ -109,7 +110,7 @@
                     <li><h2>Variacion</h2></li>
                 </ul>
             </div>
-            <!-- 
+            <!-- ejemplo de lo que se crea desde el js
             <div class="datos">
                 <ul>
                     <li class="moneda">blue</li>
@@ -142,105 +143,6 @@
                     <li>1111.1</li>
                     <li><i class="fa-solid fa-circle-arrow-up"></i></li>
                 </ul> 
-                -->
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--<div class="cabecera">
-            <h2>Moneda</h2>
-            <h2>Fecha</h2>
-            <h2>Hora</h2>
-            <h2>Compra</h2>
-            <h2>Venta</h2>
-            <h2>Accion</h2>
-        </div>
-        <div class="container">
-             ejemplo de lo que hace el .js
-            <div class="info">
-                <ul>
-                    <li>Dolar Blue</li>
-                </ul>
-                <ul>
-                    <li>15/04/2024</li>
-                    <li>15/04/2024</li>
-                    <li>15/04/2024</li>
-                    <li>15/04/2024</li>
-                    <li>15/04/2024</li>
-                </ul>
-                <ul>
-                    <li>16:50:15</li>
-                    <li>16:50:15</li>
-                    <li>16:50:15</li>
-                    <li>16:50:15</li>
-                    <li>16:50:15</li>
-                </ul>
-                <ul>
-                    <li>$1111.1</li>
-                    <li>$1111.1</li>
-                    <li>$1111.1</li>
-                    <li>$1111.1</li>
-                    <li>$1111.1</li>
-                </ul>
-                <ul>
-                    <li>$1111.1</li>
-                    <li>$1111.1</li>
-                    <li>$1111.1</li>
-                    <li>$1111.1</li>
-                    <li>$1111.1</li>
-                </ul>
-                <ul>
-                    <li><i class="fa-solid fa-circle-arrow-up"></i></li>
-                    <li><i class="fa-solid fa-circle-arrow-down"></i></li>
-                    <li><i class="fa-solid fa-circle-arrow-minus"></i></li>
-                    <li><i class="fa-solid fa-circle-arrow-xmark"></i></li>
-                    <li><i class="fa-solid fa-circle-arrow-up"></i></li>
-                </ul>
             </div>
             -->
         </div>

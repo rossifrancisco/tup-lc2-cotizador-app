@@ -176,5 +176,47 @@ document.addEventListener("DOMContentLoaded", function() {
                 datasets: datasets
             },
         });
-    }    
+    }
+
+    const form = document.getElementById('form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const dataToSend = [];
+
+        // Aquí asumo que `monedasAgrupadas` es tu estructura de datos que contiene las monedas agrupadas como has mencionado antes.
+        Object.keys(monedasAgrupadas).forEach(moneda => {
+            monedasAgrupadas[moneda].forEach(archivo => {
+                // Aquí puedes renombrar las variables si lo prefieres
+                const enviarMoneda = moneda;
+                const enviarFecha = archivo.fecha;
+                const enviarHora = archivo.hora;
+                const enviarCompra = archivo.compra;
+                const enviarVenta = archivo.venta;
+                
+                // Construir la cadena de datos en el formato deseado
+                const cadenaDatos = `Moneda: ${enviarMoneda} / Fecha: ${enviarFecha} / Hora: ${enviarHora} / Compra: ${enviarCompra} / Venta: ${enviarVenta}`;
+
+                // Agregar la cadena al arreglo
+                dataToSend.push(cadenaDatos);
+            });
+        });
+
+        // Unir todas las cadenas en una sola cadena separada por saltos de línea
+        const datosFormateados = dataToSend.join('\n');
+
+        // Asignar los datos formateados como valor del campo `datos`
+        document.getElementById("datos").value = datosFormateados;
+
+        const serviceID = 'default_service';
+        const templateID = 'template_h1p4sga';
+
+        // Enviar el formulario usando EmailJS
+        emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            alert('Correo enviado exitosamente');
+        }, (err) => {
+            alert(JSON.stringify(err));
+        });
+    });
 });

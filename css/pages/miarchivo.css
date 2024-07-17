@@ -55,3 +55,18 @@ main ul li {
 .container ul li i:hover{
     filter: invert()
 }
+
+main button {
+    margin: 10px 0px;
+    background-color: #005bc5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+main button:hover {
+    background-color: rgb(254, 188, 127);
+    color: black;
+}

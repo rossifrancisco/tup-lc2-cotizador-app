@@ -6,7 +6,11 @@
     <title>Cotizacion de Monedas</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/contacto.css">
-    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/pages/contacto.js" defer></script>
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">emailjs.init('grIdpB2B3aaZ5c3Ky')</script>
 </head>
 <body>
     <header>
@@ -56,7 +60,7 @@
         <div class="container">
             <div class="formulario">
                 <h2>Contactenos</h2>
-                <form action="#" method="post" target="_blank">
+                <form id="form">
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" id="nombre" required>
                     <label for="email">Email:</label>

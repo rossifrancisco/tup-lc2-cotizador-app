@@ -7,8 +7,9 @@
     <title>Cotizacion de Monedas</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/miarchivo.css">
-    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous"></script>
-    <script src="js/pages/miarchivo.js"></script>
+    <script src="https://kit.fontawesome.com/9d1ff1cf6e.js" crossorigin="anonymous" defer></script>
+    <script src="js/common.js" defer></script>
+    <script src="js/pages/miarchivo.js" defer></script>
 </head>
 
 <body>
@@ -56,7 +57,8 @@
     <main>
         <p class="dondeEstoy">Usted está aquí: <a href="miarchivo.html">Mi Archivo</a></p>
         <h1 class="titulo">Mi Archivo</h1>
-        <div class="container">
+        
+        <div class="container" id="imprimir">
             <div class="cabecera">
                 <ul>
                     <li><h2>Fecha</h2></li>
@@ -96,6 +98,7 @@
             </div>
             -->
         </div>
+        <button onclick="imprSelec('imprimir')"><p>IMPRIMIR</p></button>
     </main>
 
     <footer>
