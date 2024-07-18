@@ -152,7 +152,7 @@ function actualizarDatos() {
         // Mostrar fecha y hora de la ultima actualizacion
         mostrarUltimaActualizacion();
     })
-    .catch(error => console.error("Error consiguiendo los datos:", error));
+    .catch(error => alert("Error consiguiendo los datos:", error));
 }
 
 // Funcion principal

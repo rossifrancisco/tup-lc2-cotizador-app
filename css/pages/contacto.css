@@ -3,24 +3,19 @@
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
     padding: 10px;
-    gap: 10px;
+    gap: 20px;
     min-height: 460px;
 }
 
 .formulario {
     grid-row: 1/3;
-    background-color: violet;
+    background-color: #4c73b0;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
 
-.formulario h2 {
-    padding: 0px 10px;
-}
-
 .formulario form {
-    padding: 10px;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto auto;
@@ -39,7 +34,7 @@
 
 .formulario form textarea {
     resize: none;
-    height: 270px
+    height: 350px
 }
 
 .texto p{
@@ -51,7 +46,7 @@
     flex-direction: column;
     border-radius: 10px;
     justify-content: space-around;
-    background-color: lightgrey;
+    background-color: #f6bb7f;
     min-width: max-content;
     padding: 10px;
 }
@@ -78,8 +73,7 @@
 }
 
 .botones button {
-    background-color: skyblue;
-    color: black;
+    background-color: white;
     padding: 0px 20px;
     border: none;
     border-radius: 10px;

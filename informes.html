@@ -47,7 +47,7 @@
             <h3>Mi Archivo</h3>
         </button>
     
-        <button style="background-color: orange; color: black" onclick="window.location.href='informes.html'">
+        <button style="background-color: #2c1404; color: white" onclick="window.location.href='informes.html'">
             <i class="fa-solid fa-chart-simple"></i>
             <h3>Informes</h3>
         </button>
@@ -60,16 +60,38 @@
         <p>¡Miles de usuarios nos recomiendan!</p>
         
         <div class="scroll">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
-            <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+            <div class="infinito">
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+                <div class="slide">
+                    <img src="img\fcbc6b7e-9c92-4376-bc35-bc81699f98e4.jpg" alt="Recomendación">
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -97,8 +119,6 @@
 
         <canvas id="miGrafica" class="miGrafica"></canvas>
 
-        <button><p>COMPARTIR</p></button>
-
         <div class="container" id="container">
             <div class="cabecera">
                 <ul>
@@ -107,7 +127,7 @@
                     <li><h2>hora</h2></li>
                     <li><h2>Compra</h2></li>
                     <li><h2>Venta</h2></li>
-                    <li><h2>Variacion</h2></li>
+                    <li class="ultimo"><h2>Variacion</h2></li>
                 </ul>
             </div>
             <!-- ejemplo de lo que se crea desde el js
@@ -146,6 +166,9 @@
             </div>
             -->
         </div>
+
+        <button><p>Compartir</p></button>
+        
     </main>
 
     <footer>

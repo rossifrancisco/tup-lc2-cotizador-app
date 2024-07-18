@@ -26,7 +26,7 @@
 .modal-content {
     display: grid;
     grid-template-columns: 1fr auto;
-    background-color: #fefefe;
+    background-color: #4c73b0;
     padding: 25px;
     border-radius: 10px;
     max-width: max-content;
@@ -51,8 +51,7 @@
 }
 
 .modal-content form button {
-    background-color: skyblue;
-    color: black;
+    background-color: white;
     padding: 0px 20px;
     border: none;
     border-radius: 10px;
@@ -72,7 +71,7 @@
 }
 
 .close {
-    color: #aaa;
+    color: white;
     font-size: 28px;
     font-weight: bold;
     align-self: center;
@@ -86,18 +85,17 @@
 }
 
 main button {
-    margin: 10px 0px;
-    background-color: #005bc5;
-    color: white;
+    margin: 10px 0px 0px 0px;
+    background-color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition-duration: 0.5s;
+    padding: 0px 20px;
 }
 
 main button:hover {
-    background-color: rgb(254, 188, 127);
-    color: black;
+    background-color: #f6bb7f;
 }
 
 .container {
@@ -116,7 +114,7 @@ main button:hover {
 
 .cabecera {
     display: grid;
-    background-color: violet;
+    background-color: #f6bb7f;
     grid-template-columns: repeat(6, 1fr);
     position: sticky;
     top: 0;
@@ -127,6 +125,18 @@ main button:hover {
     grid-template-columns: repeat(6, 1fr);
     scroll-margin-top: 58px;
     scroll-snap-align: start;
+}
+
+@media (width < 600px) {
+    .cabecera {
+        grid-template-columns: 110px 110px 90px 100px 100px 50px;
+    }
+    .cabecera .ultimo {
+        display: none;
+    }
+    .datos {
+        grid-template-columns: 110px 110px 90px 100px 100px 50px;
+    }
 }
 
 .cabecera ul, .datos ul{
@@ -169,6 +179,6 @@ main ul li {
 .miGrafica {
     background-color: lightgrey;
     border-radius: 10px;
-    margin-top: 10px;
     width: 100% !important;
+    margin: 10px 0px;
 }

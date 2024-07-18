@@ -9,10 +9,8 @@ body {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr auto;
-    background-color: black;
-    gap: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-y: auto; /*necesario para el scroll*/
+    overflow: auto; /*necesario para el scroll*/
 }
 
 h1 {
@@ -37,11 +35,11 @@ p {
 
 header {
     grid-column: 1/-1;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
     padding: 10px;
+
     background-image: url("../img/conjunto-garabatos-dibujados-mano-simbolos-negocios-banner-web-finanzas-vectoriales_206606-216.jpg");
     background-repeat: repeat;
+
     display: flex;
     justify-content: center;
 }
@@ -58,14 +56,13 @@ header img:hover {
 }
 
 nav {
-    background-color: green;
+    background-color: #2c5c9c;
     display: flex;
     flex-direction: column;
     width: 200px;
     text-align: center;
     gap: 10px;
     padding: 10px;
-    border-radius: 20px;
     min-height: 558px; /*necesario para el scroll*/
 }
 
@@ -80,8 +77,7 @@ nav button {
 }
 
 nav button:hover {
-    background-color: red;
-    color: white;
+    background-color: #f6bb7f;
 }
 
 nav button i {
@@ -90,25 +86,41 @@ nav button i {
 }
 
 .scroll {
+    overflow: hidden;
+    scrollbar-width: none;
+}
+
+.scroll .infinito {
+    gap: 25px;
     display: flex;
     flex-direction: column;
-    align-self: center; /*centra horizontalmente las imagenes*/
-    gap: 10px;
-    overflow-y: auto; /*necesario para el scroll*/
-    scrollbar-width: none;
-    scroll-snap-type: y mandatory;
+    align-self: center; /* Centra horizontalmente las imágenes */
+    animation: scroll 25s linear infinite;
+    height: 1125px;
 }
 
-.scroll img {
-    border-radius: 50%;
+.scroll .infinito .slide {
     height: 200px;
     width: 200px;
-    scroll-snap-align: start;
 }
 
+.scroll .infinito .slide img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-1125px); /* 200px (altura de la imagen) + 25px (gap) * 10 imágenes */
+    }
+}
+
+
 main {
-    background-color: gold;
-    border-radius: 20px;
+    background-color: #4c73b0;
     padding: 10px;
 }
 
@@ -124,15 +136,18 @@ main {
     text-align: end;
 }
 
+.dondeDatos a, .dondeEstoy, a {
+    color: black;
+}
+
 footer {
     grid-column: 1/-1;
-    background-color: blueviolet;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
+    background-color: #2c1404;
     padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    color: white;
 }
 
 footer div {
@@ -151,10 +166,10 @@ footer div ul li {
 }
 
 footer div ul li a {
-    color: black;
+    color: white;
 }
 
-@media (width < 755px) {
+@media (width < 850px) {
     body {
         grid-template-columns: 1fr;
     }
