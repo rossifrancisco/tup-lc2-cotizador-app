@@ -1,6 +1,4 @@
-//localStorage.clear();
-
-//guardar favoritos en localStorage
+// Guardar favoritos en localStorage
 function guardarIndexFavoritos() {
     const favoritos = []
     const botones = document.querySelectorAll("main button");
@@ -24,7 +22,6 @@ function guardarMiArchivoFavoritos(boton) {
     const compra = boton.closest('.valores').querySelectorAll('p')[1].textContent.replace('Compra', '').trim();
     const venta = boton.closest('.valores').querySelectorAll('p')[2].textContent.replace('Venta', '').trim();
     
-    // Verificar si ya existe la moneda para la fecha actual
     let encontrado = false;
     miArchivo.forEach((archivo) => {
         if (archivo.fecha === fecha && archivo.moneda === moneda && archivo.compra === compra && archivo.venta === venta) {
@@ -35,7 +32,6 @@ function guardarMiArchivoFavoritos(boton) {
     if (!encontrado) {
         miArchivo.push({ fecha, hora, moneda, compra, venta });
         localStorage.setItem('miArchivo', JSON.stringify(miArchivo));
-        console.log(miArchivo);
     }
 }
 
@@ -48,6 +44,7 @@ function obtenerSoloFecha(fecha) {
     return `${dia}/${mes}/${año}`;
 }
 
+// Formatear la hora a hh/mm/ss
 function obtenerSoloHora(fecha) {
     const horas = String(fecha.getHours()).padStart(2, '0');
     const minutos = String(fecha.getMinutes()).padStart(2, '0');
@@ -88,7 +85,6 @@ function asignarEventosBotones() {
 function mostrarDatos(datos) {
     const grilla = document.querySelector(".grilla");
 
-    // Limpiar la grilla antes de agregar nuevos datos
     grilla.innerHTML = '';
 
     datos.forEach((dato) => {
@@ -119,10 +115,8 @@ function mostrarDatos(datos) {
         grilla.appendChild(div);
     });
 
-    // Asignar eventos a los nuevos botones
     asignarEventosBotones();
 
-    // Cargar favoritos para los nuevos botones
     cargarFavoritos();
 }
 
@@ -140,16 +134,11 @@ function actualizarDatos() {
         fetch("https://dolarapi.com/v1/cotizaciones").then(response => response.json())
     ])
     .then(([dolares, cotizaciones]) => {
-        // Excluye el primer elemento de cotizaciones
+        // Excluye el primer elemento de cotizaciones y combina en una sola variable
         cotizaciones.shift();
-        
-        // Combina ambas listas
         const data = dolares.concat(cotizaciones);
         
-        // Mostrar los datos
         mostrarDatos(data);
-
-        // Mostrar fecha y hora de la ultima actualizacion
         mostrarUltimaActualizacion();
     })
     .catch(error => alert("Error consiguiendo los datos:", error));
@@ -189,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Obtener los datos iniciales
     actualizarDatos();
 
     // Actualizar los datos cada 5 minutos

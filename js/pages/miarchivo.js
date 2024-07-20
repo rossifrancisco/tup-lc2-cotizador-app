@@ -1,18 +1,27 @@
+// Funcion principal
 document.addEventListener("DOMContentLoaded", function() {
     const miArchivo = JSON.parse(localStorage.getItem('miArchivo')) || [];
     const container = document.querySelector(".container");
-    
+
+    const fechasAgrupadas = agruparFechas(miArchivo);
+    crearElementosHTML(fechasAgrupadas, container);
+    inicializarEventos(fechasAgrupadas, container);
+});
+
+// Agrupar los datos por fecha
+function agruparFechas(miArchivo) {
     let fechasAgrupadas = {};
-    
-    // Agrupar las monedas por fecha
     miArchivo.forEach((archivo) => {
         if (!fechasAgrupadas[archivo.fecha]) {
             fechasAgrupadas[archivo.fecha] = [];
         }
         fechasAgrupadas[archivo.fecha].push(archivo);
     });
-    
-    // Crear los elementos HTML
+    return fechasAgrupadas;
+}
+
+// Crear elementos y agregarlos al HTML
+function crearElementosHTML(fechasAgrupadas, container) {
     Object.keys(fechasAgrupadas).forEach(fecha => {
         let div = document.createElement("div");
         div.classList.add("datos");
@@ -55,22 +64,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         container.appendChild(div);
     });
+}
 
-    // Agregar evento de click a los iconos de basura
+// Borrar elemento de la lista y recargar la pagina
+function inicializarEventos(fechasAgrupadas, container) {
     container.addEventListener("click", function(e) {
         if (e.target.classList.contains("fa-trash-can")) {
             const fecha = e.target.dataset.fecha;
             const index = e.target.dataset.index;
 
-            // Eliminar el elemento del array
             fechasAgrupadas[fecha].splice(index, 1);
 
-            // Si no hay más elementos en la fecha, eliminar la fecha del objeto
             if (fechasAgrupadas[fecha].length === 0) {
                 delete fechasAgrupadas[fecha];
             }
 
-            // Actualizar el almacenamiento local
             const nuevoArchivo = [];
             Object.keys(fechasAgrupadas).forEach(fecha => {
                 fechasAgrupadas[fecha].forEach(archivo => {
@@ -79,12 +87,12 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             localStorage.setItem('miArchivo', JSON.stringify(nuevoArchivo));
 
-            // Recargar la página para reflejar los cambios
             location.reload();
         }
     });
-});
+}
 
+// Imprimir contenido del archivo
 function imprSelec(nombre) {
     var contenido = document.getElementById(nombre).innerHTML;
     var contenidoOriginal = document.body.innerHTML;
